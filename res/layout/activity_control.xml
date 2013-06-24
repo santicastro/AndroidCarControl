@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ControlActivity" >
+
+    <com.mobileanarchy.android.widgets.joystick.JoystickView
+        android:id="@+id/joystickView"
+        android:layout_width="250dip"
+        android:layout_height="250dip"
+        android:layout_below="@+id/btnLigths"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dip" />
+
+    <ImageButton
+        android:id="@+id/btnLigths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:contentDescription="ligths switch"
+        android:padding="30dp"
+        android:src="@drawable/lights"
+        android:text="" />
+
+    <ImageButton
+        android:id="@+id/btnHorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btnLigths"
+        android:contentDescription="horn button"
+        android:padding="30dp"
+        android:src="@drawable/horn"
+        android:text="" />
+
+    <TableLayout
+        android:id="@+id/coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/joystickView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dip" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="50dip"
+                android:layout_height="wrap_content"
+                android:text="X" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewX"
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:text="" >
+            </TextView>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextViewY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" >
+            </TextView>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/txtSent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Last sent: x,y" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/txtReceived"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Last received: ok"
+        android:visibility="invisible" >
+    </TextView>
+
+</RelativeLayout>
